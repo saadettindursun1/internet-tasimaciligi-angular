@@ -1,0 +1,190 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark top-fixed">
+    <a class="text-light ml-2" href=""><img src="../../../assets/logodeneme.png" style="height: 60%;width: 60%;"
+            alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse mr-4 justify-content-end  text-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <div class="card bg-info mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor/soforyardim">
+                        Yol Yardım <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card mr-4 mb-2 mt-2" style="background-color:grey">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor/gecmis">
+                        Alınan İşler <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card mr-4 mb-2 mt-2" style="background-color:grey">
+                <li class="nav-item active text-center">
+                    <a class="nav-link text-white" href="sofor/favoriler">
+                        Favorilerim <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card  mr-4 mb-2 mt-2" style="background-color:grey">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor/isara">
+                        İş İlanları <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+            <div class="card  mb-2 mt-2 dropdown" style="background-color:grey">
+
+                <button class="btn dropdown-toggle text-white" style="background-color:grey;" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Diğer İşlemler
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Destek</a>
+                    <a class="dropdown-item" href="sofor/ayarlar">Ayarlar</a>
+                    <a class="dropdown-item" href="sofor" (click)="this.OturumKapat()">Çıkış</a>
+                </div>
+
+            </div>
+        </ul>
+    </div>
+
+</nav>
+<div class="container mt-5">
+
+
+    <form #form="ngForm">
+        <div class="form-inline">
+            <label class="ml-3">Konumunuz</label>
+            <select name="konum" class="form-control ml-3" [(ngModel)]="this.konum">
+                <option>Seçiniz</option>
+                <option>Adana</option>
+                <option>Adıyaman</option>
+                <option>Afyonkarahisar</option>
+                <option>Ağrı</option>
+                <option>Amasya</option>
+                <option>Ankara</option>
+                <option>Antalya</option>
+                <option>Artvin</option>
+                <option>Aydın</option>
+                <option>Balıkesir</option>
+                <option>Bilecik</option>
+                <option>Bingöl</option>
+                <option>Bitlis</option>
+                <option>Bolu</option>
+                <option>Burdur</option>
+                <option>Bursa</option>
+                <option>Çanakkale</option>
+                <option>Çankırı</option>
+                <option>Çorum</option>
+                <option>Denizli</option>
+                <option>Diyarbakır</option>
+                <option>Edirne</option>
+                <option>Elazığ</option>
+                <option>Erzincan</option>
+                <option>Erzurum</option>
+                <option>Eskişehir</option>
+                <option>Gaziantep</option>
+                <option>Giresun</option>
+                <option>Gümüşhane</option>
+                <option>Hakkâri</option>
+                <option>Hatay</option>
+                <option>Isparta</option>
+                <option>Mersin</option>
+                <option>İstanbul</option>
+                <option>İzmir</option>
+                <option>Kars</option>
+                <option>Kastamonu</option>
+                <option>Kayseri</option>
+                <option>Kırklareli</option>
+                <option>Kırşehir</option>
+                <option>Kocaeli</option>
+                <option>Konya</option>
+                <option>Kütahya</option>
+                <option>Malatya</option>
+                <option>Manisa</option>
+                <option>Kahramanmaraş</option>
+                <option>Mardin</option>
+                <option>Muğla</option>
+                <option>Muş</option>
+                <option>Nevşehir</option>
+                <option>Niğde</option>
+                <option>Ordu</option>
+                <option>Rize</option>
+                <option>Sakarya</option>
+                <option>Samsun</option>
+                <option>Siirt</option>
+                <option>Sinop</option>
+                <option>Sivas</option>
+                <option>Tekirdağ</option>
+                <option>Tokat</option>
+                <option>Trabzon</option>
+                <option>Tunceli</option>
+                <option>Şanlıurfa</option>
+                <option>Uşak</option>
+                <option>Van</option>
+                <option>Yozgat</option>
+                <option>Zonguldak</option>
+                <option>Aksaray</option>
+                <option>Bayburt</option>
+                <option>Karaman</option>
+                <option>Kırıkkale</option>
+                <option>Batman</option>
+                <option>Şırnak</option>
+                <option>Bartın</option>
+                <option>Ardahan</option>
+                <option>Iğdır</option>
+                <option>Yalova</option>
+                <option>Karabük</option>
+                <option>Kilis</option>
+                <option>Osmaniye</option>
+                <option>Düzce</option>
+            </select>
+
+            <label class="ml-3">Arıza Tipi</label>
+            <select name="ariza" class="form-control ml-3" [(ngModel)]="this.ariza">
+
+                <option>Kurtarıcı Hizmeti</option>
+                <option>Lastik Hizmeti</option>
+                <option>Motor Hizmeti</option>
+                <option>Elektrik Tesisatı Hizmeti</option>
+                <option>Akü Hizmeti</option>
+                <option>Diğer Hizmetler</option>
+
+            </select>
+            <input type="submit" value="Yol Yardım Ara" class="form-control btn btn-success ml-3 mt-2"
+                (click)="KayitListele2()">
+            <input type="submit" value="Tümünü Gör" class="form-control btn btn-warning ml-3 mt-2"
+                (click)="KayitListele()">
+        </div>
+
+    </form>
+
+    <table class="table table-hover table-warning mt-3">
+        <thead class="table table-info">
+            <tr>
+
+                <td>Firma Adı</td>
+                <td>Yardım Alanı</td>
+                <td>Firma Adres</td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let kayit of kayitlar">
+                <td>{{kayit.isletmeAdi}} <br> {{kayit.telNo}}</td>
+                <td>{{kayit.yardim}}</td>
+                <td>{{kayit.konum}}</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

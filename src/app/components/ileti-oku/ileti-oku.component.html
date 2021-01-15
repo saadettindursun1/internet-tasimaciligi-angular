@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark top-fixed">
+    <a class="text-light ml-2" href=""><img src="../../../assets/logodeneme.png" style="height: 60%;width: 60%;"
+            alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse mr-4 justify-content-end  text-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <div class="card  bg-warning mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="admin/soforAdmin">
+                        Şöförler <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card bg-warning mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="admin/isletmeAdmin">
+                        İşletmeler <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card bg-warning mr-4 mb-2 mt-2">
+                <li class="nav-item active text-center">
+                    <a class="nav-link text-dark" href="admin/yolyardimAdmin">
+                        Yol Yardım İşletmeleri<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card  bg-info  mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="admin/iletiOku">
+                        İletiler<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+            <div class="card  bg-danger  mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="">
+                        Çıkış Yap<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+</nav>
+<div class="container">
+    <div class="row mt-5">
+        <h4>Sisteme Gelen Mesajlar</h4>
+    </div>
+    <hr>
+    <div class="col-md-8 card mt-3" *ngFor="let item of kayitlar">
+        <div class="card-header text-center">{{item.adsoyad}}</div>
+        <div class="card-body">
+            <strong class="float-right"> {{item.kayitTarih.replace('/Date(','').replace(')/','') |
+                date:"dd/MM/yyyy"}}</strong> <br>
+            {{item.mesaj}}
+        </div>
+        <div class="card-footer">
+            {{item.posta}}
+            <button type="submit" class="btn btn-outline-danger float-right" (click)="this.iletiSil(item.key)">İletiyi
+                Sİl</button>
+        </div>
+    </div>
+</div>

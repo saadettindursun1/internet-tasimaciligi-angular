@@ -1,0 +1,222 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark top-fixed">
+    <a class="text-light ml-2" href=""><img src="../../../assets/logodeneme.png" style="height: 60%;width: 60%;"
+            alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse mr-4 justify-content-end  text-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <div class="card bg-warning mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="">
+                        Ana Sayfa <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card bg-warning mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-dark" href="yolyardim">
+                        Yol Yardım İşletmeleri <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card bg-warning mr-4 mb-2 mt-2">
+                <li class="nav-item active text-center">
+                    <a class="nav-link text-dark" href="isveren">
+                        İşletme İşlemleri<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card bg-info mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor">
+                        Şöför İşlemleri<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="container">
+
+
+    <div class="col-md-5 mt-5 float-left">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3>Giriş Yap</h3>
+            </div>
+            <div class="card-body">
+                <form #frm2="ngForm">
+                    <div class="form-group">
+                        <label>E posta</label>
+                        <input type="text" name="mail" class="form-control" #mail>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input type="password" name="parola" class="form-control" #parola>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="giris" class="btn btn-success btn-block" value="Giriş"
+                            (click)="GirisYap(mail.value,parola.value)">
+                    </div>
+                    <div *ngIf="durum?.length>0" [ngClass]="sonuc? 'alert alert-success':'alert alert-danger'">
+                        {{durum}}
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-right">Marjinal Yazılım.</div>
+
+        </div>
+    </div>
+    <div class="col-md-7 mt-5 float-left">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h3>Kayıt Ol</h3>
+            </div>
+            <div class="card-body">
+                <form #frm="ngForm" (ngSubmit)="KayitOl()">
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" name="adsoyad" class="form-control" #adSoyad [(ngModel)]="secUye.adSoyad"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon Numarası</label>
+                        <input type="text" name="telNo" class="form-control" #telNo [(ngModel)]="secUye.telNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Konum</label>
+                        <select name="konum" class="form-control" #konum [(ngModel)]="secUye.konum" required>
+                            <option>Adana</option>
+                            <option>Adıyaman</option>
+                            <option>Afyonkarahisar</option>
+                            <option>Ağrı</option>
+                            <option>Amasya</option>
+                            <option>Ankara</option>
+                            <option>Antalya</option>
+                            <option>Artvin</option>
+                            <option>Aydın</option>
+                            <option>Balıkesir</option>
+                            <option>Bilecik</option>
+                            <option>Bingöl</option>
+                            <option>Bitlis</option>
+                            <option>Bolu</option>
+                            <option>Burdur</option>
+                            <option>Bursa</option>
+                            <option>Çanakkale</option>
+                            <option>Çankırı</option>
+                            <option>Çorum</option>
+                            <option>Denizli</option>
+                            <option>Diyarbakır</option>
+                            <option>Edirne</option>
+                            <option>Elazığ</option>
+                            <option>Erzincan</option>
+                            <option>Erzurum</option>
+                            <option>Eskişehir</option>
+                            <option>Gaziantep</option>
+                            <option>Giresun</option>
+                            <option>Gümüşhane</option>
+                            <option>Hakkâri</option>
+                            <option>Hatay</option>
+                            <option>Isparta</option>
+                            <option>Mersin</option>
+                            <option>İstanbul</option>
+                            <option>İzmir</option>
+                            <option>Kars</option>
+                            <option>Kastamonu</option>
+                            <option>Kayseri</option>
+                            <option>Kırklareli</option>
+                            <option>Kırşehir</option>
+                            <option>Kocaeli</option>
+                            <option>Konya</option>
+                            <option>Kütahya</option>
+                            <option>Malatya</option>
+                            <option>Manisa</option>
+                            <option>Kahramanmaraş</option>
+                            <option>Mardin</option>
+                            <option>Muğla</option>
+                            <option>Muş</option>
+                            <option>Nevşehir</option>
+                            <option>Niğde</option>
+                            <option>Ordu</option>
+                            <option>Rize</option>
+                            <option>Sakarya</option>
+                            <option>Samsun</option>
+                            <option>Siirt</option>
+                            <option>Sinop</option>
+                            <option>Sivas</option>
+                            <option>Tekirdağ</option>
+                            <option>Tokat</option>
+                            <option>Trabzon</option>
+                            <option>Tunceli</option>
+                            <option>Şanlıurfa</option>
+                            <option>Uşak</option>
+                            <option>Van</option>
+                            <option>Yozgat</option>
+                            <option>Zonguldak</option>
+                            <option>Aksaray</option>
+                            <option>Bayburt</option>
+                            <option>Karaman</option>
+                            <option>Kırıkkale</option>
+                            <option>Batman</option>
+                            <option>Şırnak</option>
+                            <option>Bartın</option>
+                            <option>Ardahan</option>
+                            <option>Iğdır</option>
+                            <option>Yalova</option>
+                            <option>Karabük</option>
+                            <option>Kilis</option>
+                            <option>Osmaniye</option>
+                            <option>Düzce</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>E posta</label>
+                        <input type="text" name="posta" class="form-control" #posta [(ngModel)]="secUye.posta" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Araç Plakası</label>
+                        <input type="text" name="plaka" class="form-control" #plaka [(ngModel)]="secUye.plaka" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Araç Türü</label>
+                        <select name="aracTur" class="form-control" #aracTur [(ngModel)]="secUye.aracTur" required>
+                            <option>Seçiniz</option>
+                            <option>Tenteli Tır</option>
+                            <option>Treylerli Tır</option>
+                            <option>Normal Açık Tır</option>
+                            <option>Damperli Tır</option>
+                            <option>Lowbed Tır</option>
+                            <option>Kırkayak</option>
+                            <option>Kamyon</option>
+                            <option>Kamyonet</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input type="password" name="sifre" class="form-control" #sifre [(ngModel)]="secUye.sifre"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="giris" class="btn btn-warning text-dark btn-block" value="Kayıt Ol"
+                            [disabled]="frm.invalid">
+                    </div>
+                    <div *ngIf="durum2?.length>0" [ngClass]="sonuc2? 'alert alert-success':'alert alert-danger'">
+                        {{durum2}}
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-right">Marjinal Yazılım.</div>
+
+        </div>
+    </div>
+</div>

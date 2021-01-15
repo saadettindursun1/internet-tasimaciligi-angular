@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark top-fixed">
+    <a class="text-light ml-2" href=""><img src="../../../assets/logodeneme.png" style="height: 60%;width: 60%;"
+            alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse mr-4 justify-content-end  text-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <div class="card mr-4 mb-2 mt-2" style="background-color:grey">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor/soforyardim">
+                        Yol Yardım <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card mr-4 mb-2 mt-2" style="background-color:grey">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor/gecmis">
+                        Alınan İşler <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card mr-4 mb-2 mt-2" style="background-color:grey">
+                <li class="nav-item active text-center">
+                    <a class="nav-link text-white" href="sofor/favoriler">
+                        Favorilerim <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+
+            <div class="card bg-info mr-4 mb-2 mt-2">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="sofor/isara">
+                        İş İlanları <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </div>
+            <div class="card  mb-2 mt-2 dropdown" style="background-color:grey">
+
+                <button class="btn dropdown-toggle text-white" style="background-color:grey;" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Diğer İşlemler
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Destek</a>
+                    <a class="dropdown-item" href="sofor/ayarlar">Ayarlar</a>
+                    <a class="dropdown-item" href="sofor">Çıkış</a>
+                </div>
+
+            </div>
+        </ul>
+    </div>
+
+</nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>DOSYA EKLE</h3>
+            <input type="file" (change)="DosyaSec($event)">
+            <button class="btn btn-primary" (click)="DosyaYukle()">Yükle</button>
+
+        </div>
+    </div>
+    <div class="row col-md-10">
+        <div class="card mt-5" *ngFor="let item of kayitlar">
+            <div class="card-header">{{item.adi}}</div>
+            <div class="card-body" style=""><img src="{{item.url}}" alt="" style="height:300px;width:auto;"></div>
+            <div class="card-footer">Saadettin Dursun</div>
+        </div>
+    </div>
+
+
+</div>
